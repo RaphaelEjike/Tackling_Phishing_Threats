@@ -193,8 +193,6 @@ EDR solutions often include features to isolate infected machines and roll back 
 Implementing Endpoint Detection and Response solutions is essential for protecting your organization’s endpoints from advanced threats.
 
 
-
-
 ## DNS Filtering
 ### Overview
 
@@ -222,6 +220,117 @@ Many phishing attacks involve new or suspicious domains that haven’t yet been 
 
 ### Conclusion
 Implementing DNS Filtering through domain-based blacklisting and whitelisting, as well as blocking access to risky or newly registered domains, is essential for protecting your organization from phishing and other cyber threats.
+
+
+## File Type Restrictions
+### Overview
+
+File type restrictions are essential for enhancing email security by preventing the transmission of potentially harmful files. By blocking unnecessary file types and enforcing the use of password-protected attachments, organizations can significantly reduce the risk of malware and phishing attacks. This guide covers the implementation of file type restrictions and the use of password-protected attachments.
+
+### Block Unnecessary File Types
+
+Restricting the types of files allowed through email helps prevent the spread of malware and other malicious content. Commonly blocked file types include executable files (.exe, .bat) and script files (.vbs, .js).
+
+### How to Block Unnecessary File Types
+1. Identify Risky File Types: Determine which file types are unnecessary and pose a security risk.
+2. Configure Email Security Policies: Set up policies to block these file types from being sent or received via email.
+
+### Example Configuration for Microsoft Exchange Online
+
+Here’s an example PowerShell script to block specific file types in Microsoft Exchange Online:
+
+```
+# Connect to Exchange Online
+Connect-ExchangeOnline -UserPrincipalName admin@yourdomain.com
+
+# Create a new transport rule to block specific file types
+New-TransportRule -Name "BlockExecutableFiles" -AttachmentExtensionMatchesWords "exe","bat","vbs","js" -RejectMessageReasonText "Attachments of this type are not allowed."
+
+# Disconnect from Exchange Online
+Disconnect-ExchangeOnline -Confirm:$false
+
+```
+
+### Use Password-Protected Attachments
+
+For sensitive or critical attachments, enforcing the use of password protection adds an extra layer of security. This ensures that only authorized recipients can access the content.
+
+### How to Use Password-Protected Attachments
+
+1. Create Password-Protected Files: Use tools like Microsoft Office or WinZip to create password-protected files.
+2. Share Passwords Securely: Share the password through a secure channel, separate from the email containing the attachment.
+
+### Conclusion
+
+Implementing file type restrictions and using password-protected attachments are crucial steps in enhancing your organization’s email security
+
+
+
+## Zero Trust Architecture
+### Overview
+Zero Trust Architecture (ZTA) is a security model that requires continuous verification of user identities and devices before granting access to internal systems and services. This approach significantly reduces the risk of phishing emails leading to internal system compromise by ensuring that access is always verified and never implicitly trusted.
+
+
+### Zero Trust Access Control
+Implementing Zero Trust Access Control involves several key principles and steps to ensure that access to internal systems is continuously verified.
+
+### Key Principles of Zero Trust
+
+1. Verify Explicitly: Always authenticate and authorize based on all available data points, including user identity, location, device health, and more.
+2. Use Least Privilege Access: Limit user access to only what is necessary for their role, reducing the potential impact of compromised accounts.
+3. Assume Breach: Design systems with the assumption that a breach has already occurred, and segment access to minimize damage.
+
+
+### How to Implement Zero Trust Access Control
+
+1. Identity Verification: Continuously verify user identities using multi-factor authentication (MFA) and other identity management solutions.
+2. Device Health Checks: Ensure that devices meet security standards before granting access.
+3. Access Policies: Create and enforce policies that define who can access what resources under which conditions.
+
+### Example Configuration for Microsoft Azure AD Conditional Access
+
+Here’s an example PowerShell script to configure Zero Trust access control using Microsoft Azure AD Conditional Access:
+
+```
+# Connect to Azure AD
+Connect-AzureAD
+
+# Create a new Conditional Access policy
+$policy = New-Object -TypeName Microsoft.Open.AzureAD.Model.ConditionalAccessPolicy
+$policy.DisplayName = "Zero Trust Access Policy"
+$policy.State = "Enabled"
+$policy.Conditions = New-Object -TypeName Microsoft.Open.AzureAD.Model.ConditionalAccessConditionSet
+
+# Define user and group conditions
+$policy.Conditions.Users = New-Object -TypeName Microsoft.Open.AzureAD.Model.ConditionalAccessUsers
+$policy.Conditions.Users.IncludeUsers = @("All")
+$policy.Conditions.Users.IncludeGroups = @("All")
+
+# Define device conditions
+$policy.Conditions.Devices = New-Object -TypeName Microsoft.Open.AzureAD.Model.ConditionalAccessDevices
+$policy.Conditions.Devices.IncludeDeviceStates = @("Compliant")
+
+# Define access controls
+$policy.GrantControls = New-Object -TypeName Microsoft.Open.AzureAD.Model.ConditionalAccessGrantControls
+$policy.GrantControls.BuiltInControls = @("Mfa")
+
+# Apply the policy
+New-AzureADMSConditionalAccessPolicy -ConditionalAccessPolicy $policy
+
+# Disconnect from Azure AD
+Disconnect-AzureAD
+```
+
+### Benefits of Zero Trust Architecture
+
+- Enhanced Security: Continuous verification reduces the risk of unauthorized access.
+- Reduced Attack Surface: Limiting access to only necessary resources minimizes potential damage.
+- Improved Compliance: Helps meet regulatory requirements for data protection and security.
+
+### Conclusion
+Implementing a Zero Trust Architecture is essential for protecting your organization from sophisticated cyber threats.
+
+
 
 
 
