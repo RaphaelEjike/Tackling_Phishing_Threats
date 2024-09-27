@@ -157,13 +157,75 @@ Disconnect-AzureAD
 ### 3. Educate Employees
 Ensure that employees understand the importance of MFA and how to use it. Provide training sessions and resources to help them set up and use MFA effectively.
 
-
 #### Benefits of MFA
+
 - Enhanced Security: Even if credentials are compromised, attackers cannot access accounts without the second factor of authentication.
 - Compliance: MFA helps meet regulatory requirements for data protection and security.
 - User Awareness: Encourages employees to be more security-conscious and vigilant about their account security.
+
 ### Conclusion
+
 Enforcing Multi-Factor Authentication is a crucial step in protecting your organization’s accounts from unauthorized access.
+
+## Endpoint Detection and Response (EDR)
+### Overview
+
+Endpoint Detection and Response (EDR) solutions are crucial for protecting your organization’s endpoints from advanced threats. EDR tools provide real-time monitoring, detection, and response capabilities to identify and mitigate malicious activities on devices such as desktops, laptops, and servers. This guide covers the implementation of EDR solutions and their key features, including isolation and rollback capabilities.
+
+
+### How EDR Works
+
+1. Continuous Monitoring: EDR solutions continuously monitor endpoint activities to detect suspicious behavior.
+2. Threat Detection: Advanced analytics and machine learning are used to identify potential threats.
+3. Response: Automated and manual responses are triggered to contain and remediate threats.
+
+
+### Isolation and Rollback
+
+EDR solutions often include features to isolate infected machines and roll back unauthorized changes made by malware or phishing attacks. These capabilities help contain the spread of threats and restore systems to their pre-attack state.
+
+### How Isolation and Rollback Work
+
+1. Isolation: Infected machines are isolated from the network to prevent the spread of malware.
+2. Rollback: Unauthorized changes made by malware are reversed, restoring the system to its previous state.
+
+### Conclusion
+Implementing Endpoint Detection and Response solutions is essential for protecting your organization’s endpoints from advanced threats.
+
+
+
+
+## DNS Filtering
+### Overview
+
+DNS Filtering is a crucial security measure that helps protect your organization from accessing malicious or inappropriate websites. By controlling which domains can be accessed, DNS filtering can prevent phishing attempts and other cyber threats. This guide covers the implementation of domain-based blacklisting and whitelisting, as well as preventing access to risky or newly registered domains.
+
+
+### Domain-Based Blacklisting and Whitelisting
+
+DNS filtering allows you to create lists of domains that are either blocked (blacklisted) or allowed (whitelisted). This helps control access to known malicious domains and ensures that only safe and approved websites are accessible.
+
+### How Blacklisting and Whitelisting Work
+
+1. Blacklisting: Blocks access to specific domains known to be malicious or inappropriate.
+2. Whitelisting: Allows access only to specific, approved domains.
+
+
+### Preventing Access to Risky or Newly Registered Domains
+
+Many phishing attacks involve new or suspicious domains that haven’t yet been flagged by reputation systems. DNS filtering can help prevent access to these risky domains.
+
+### How to Block Risky or Newly Registered Domains
+
+1. Risk Assessment: Use threat intelligence to identify and block access to domains that are considered risky.
+2. New Domain Blocking: Automatically block access to newly registered domains until they are verified as safe.
+
+### Conclusion
+Implementing DNS Filtering through domain-based blacklisting and whitelisting, as well as blocking access to risky or newly registered domains, is essential for protecting your organization from phishing and other cyber threats.
+
+
+
+
 
 
 
