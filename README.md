@@ -331,6 +331,109 @@ Disconnect-AzureAD
 Implementing a Zero Trust Architecture is essential for protecting your organization from sophisticated cyber threats.
 
 
+## Threat Intelligence Integration
+### Overview
+Integrating threat intelligence into your security operations is crucial for staying ahead of cyber threats. By incorporating external and internal threat intelligence feeds and engaging in proactive threat hunting, organizations can better detect and mitigate phishing attempts and other malicious activities. This guide covers the use of threat intelligence feeds and the MITRE ATT&CK framework for effective threat hunting.
+
+
+
+### Use Threat Intelligence Feeds
+Threat intelligence feeds provide valuable information about known threats, including phishing domains and malicious actors. By integrating these feeds into your security operations, you can enhance your ability to detect and respond to threats.
+
+### How to Use Threat Intelligence Feeds
+1. Select Threat Intelligence Sources: Choose reliable external and internal threat intelligence feeds. Examples include open-source data feeds, commercial intelligence feeds, and threat intelligence-sharing communities.
+2. Integrate with Security Tools: Incorporate threat intelligence feeds into your security information and event management (SIEM) systems and other security tools.
+
+
+
+
+### Proactive Threat Hunting
+Proactive threat hunting involves actively searching for signs of malicious activity within your network. The MITRE ATT&CK framework provides a comprehensive matrix of tactics and techniques used by threat actors, which can be leveraged for effective threat hunting.
+
+### How to Use the MITRE ATT&CK Framework
+1. Identify Relevant Techniques: Focus on techniques related to phishing, such as T1204.002 (User Execution: Malicious File) and T1566.001 (Phishing: Spearphishing Attachment).
+2. Develop Hunting Hypotheses: Create hypotheses about potential threats based on the identified techniques.
+3. Collect and Analyze Data: Use security tools to collect and analyze data related to the hypotheses.
+
+
+### Conclusion
+Integrating threat intelligence feeds and engaging in proactive threat hunting using the MITRE ATT&CK framework are essential steps in enhancing your organization’s security posture
+
+## Domain-Based Message Authentication, Reporting & Conformance (DMARC)
+### Overview
+DMARC, along with DKIM and SPF, is a critical email authentication protocol that helps validate legitimate senders and reduce the risk of email spoofing, a common tactic in phishing attacks. Implementing these protocols ensures that your organization’s emails are authenticated and trusted by recipients.
+
+### Enable DMARC, DKIM, and SPF
+1. Sender Policy Framework (SPF)
+SPF allows domain owners to specify which mail servers are permitted to send emails on behalf of their domain. This helps prevent unauthorized senders from forging emails.
+
+### Example SPF Record
+Here’s an example of an SPF record for a domain:
+
+```
+v=spf1 include:spf.protection.outlook.com -all
+```
+2. DomainKeys Identified Mail (DKIM)
+DKIM adds a digital signature to emails, allowing the recipient’s mail server to verify that the email was sent from an authorized server and that it hasn’t been altered during transit.
+
+Example DKIM Configuration
+To set up DKIM, you need to generate a public-private key pair and publish the public key in your DNS records. Here’s an example of a DKIM DNS record:
+
+```
+default._domainkey.yourdomain.com IN TXT "v=DKIM1; k=rsa; p=your_public_key"
+
+```
+
+### 3. Domain-Based Message Authentication, Reporting & Conformance (DMARC)
+DMARC builds on SPF and DKIM by adding a policy that instructs receiving mail servers on how to handle emails that fail authentication checks. It also provides reporting capabilities to monitor and improve email authentication.
+
+### Example DMARC Record
+Here’s an example of a DMARC record for a domain:
+
+```
+v=DMARC1; p=reject; rua=mailto:dmarc-reports@yourdomain.com; ruf=mailto:dmarc-failures@yourdomain.com; fo=1
+```
+
+### How to Implement DMARC, DKIM, and SPF
+1. Create DNS Records: Add the SPF, DKIM, and DMARC records to your domain’s DNS settings.
+2. Monitor Reports: Use the reporting capabilities of DMARC to monitor authentication results and adjust policies as needed.
+3. Enforce Policies: Gradually move from a monitoring policy (p=none) to a more restrictive policy (p=quarantine or p=reject) as you gain confidence in your email authentication setup.
+
+### Example Configuration for Microsoft 365
+
+Here’s an example PowerShell script to configure DMARC, DKIM, and SPF for Microsoft 365:
+
+```
+# Connect to Exchange Online
+Connect-ExchangeOnline -UserPrincipalName admin@yourdomain.com
+
+# Set up SPF record
+Set-DnsRecord -Name "yourdomain.com" -Type "TXT" -Value "v=spf1 include:spf.protection.outlook.com -all"
+
+# Set up DKIM
+New-DkimSigningConfig -DomainName "yourdomain.com" -Enabled $true
+
+# Set up DMARC
+Set-DnsRecord -Name "_dmarc.yourdomain.com" -Type "TXT" -Value "v=DMARC1; p=reject; rua=mailto:dmarc-reports@yourdomain.com; ruf=mailto:dmarc-failures@yourdomain.com; fo=1"
+
+# Disconnect from Exchange Online
+Disconnect-ExchangeOnline -Confirm:$false
+
+```
+
+### Conclusion
+
+Enabling DMARC, DKIM, and SPF is essential for protecting your organization’s email domain from spoofing and phishing attacks.
+
+
+
+
+
+
+## Zero Trust Architecture
+### Overview
+
+
 
 
 
