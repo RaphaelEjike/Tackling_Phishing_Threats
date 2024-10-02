@@ -454,7 +454,7 @@ Enabling DMARC, DKIM, and SPF is essential for protecting your organization’s 
 
 
 
-## 10 Endpoint Hardening
+## 10. Endpoint Hardening
 ### Overview
 
 Endpoint hardening involves implementing security measures to protect endpoints such as desktops, laptops, and servers from cyber threats. By using application whitelisting and disabling macros, organizations can significantly reduce the risk of phishing attacks and other malicious activities.
