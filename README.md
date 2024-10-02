@@ -55,6 +55,7 @@ Content Disarm and Reconstruction (CDR) technology removes potentially malicious
 
 #### How CDR Works
 i) Disarm: The CDR engine scans the attachment for malicious code.
+
 ii) Reconstruct: The engine removes any detected malicious code and reconstructs the attachment in a safe format.
 
 ### Conclusion
@@ -74,8 +75,10 @@ Sandboxing solutions analyze email attachments in an isolated environment to det
 
 ### How Sandboxing Works
 
-i). Isolation: The attachment is executed in a controlled, isolated environment.
+i) Isolation: The attachment is executed in a controlled, isolated environment.
+
 ii) Behavior Analysis: The sandbox monitors the attachment’s behavior for any signs of malicious activity.
+
 iii) Verdict: Based on the analysis, the attachment is either flagged as safe or malicious.
 
 
@@ -86,6 +89,7 @@ Attachment and URL scanning services provide real-time protection by scanning fi
 ### How Real-Time Scanning Works
 
 i) Attachment Scanning: The service scans email attachments for malware and other threats.
+
 ii) URL Scanning: The service checks URLs in emails for phishing attempts and malicious content.
 
 ### Example Configuration for Microsoft Defender for Office 365
@@ -136,8 +140,8 @@ Select a reliable MFA solution that integrates well with your existing infrastru
 
 Set up MFA policies to enforce multi-factor authentication for all employees. This typically involves:
 
-- Registration: Employees register their devices (e.g., smartphones) with the MFA solution.
-- Verification Methods: Choose verification methods such as SMS codes, authenticator apps, or biometric verification.
+i) Registration: Employees register their devices (e.g., smartphones) with the MFA solution.
+ii) Verification Methods: Choose verification methods such as SMS codes, authenticator apps, or biometric verification.
 
 ### Example Configuration for Microsoft Azure AD
 
@@ -168,9 +172,11 @@ Ensure that employees understand the importance of MFA and how to use it. Provid
 
 #### Benefits of MFA
 
-- Enhanced Security: Even if credentials are compromised, attackers cannot access accounts without the second factor of authentication.
-- Compliance: MFA helps meet regulatory requirements for data protection and security.
-- User Awareness: Encourages employees to be more security-conscious and vigilant about their account security.
+i) Enhanced Security: Even if credentials are compromised, attackers cannot access accounts without the second factor of authentication.
+
+ii) Compliance: MFA helps meet regulatory requirements for data protection and security.
+
+iii) User Awareness: Encourages employees to be more security-conscious and vigilant about their account security.
 
 ### Conclusion
 
@@ -190,7 +196,9 @@ Endpoint Detection and Response (EDR) solutions are crucial for protecting your 
 ### How EDR Works
 
 i) Continuous Monitoring: EDR solutions continuously monitor endpoint activities to detect suspicious behavior.
+
 ii) Threat Detection: Advanced analytics and machine learning are used to identify potential threats.
+
 iii) Response: Automated and manual responses are triggered to contain and remediate threats.
 
 ### Isolation and Rollback
@@ -200,6 +208,7 @@ EDR solutions often include features to isolate infected machines and roll back 
 ### How Isolation and Rollback Work
 
 i) Isolation: Infected machines are isolated from the network to prevent the spread of malware.
+
 ii) Rollback: Unauthorized changes made by malware are reversed, restoring the system to its previous state.
 
 ### Conclusion
@@ -222,6 +231,7 @@ DNS filtering allows you to create lists of domains that are either blocked (bla
 ### How Blacklisting and Whitelisting Work
 
 i) Blacklisting: Blocks access to specific domains known to be malicious or inappropriate.
+
 ii) Whitelisting: Allows access only to specific, approved domains.
 
 ### Preventing Access to Risky or Newly Registered Domains
@@ -231,6 +241,7 @@ Many phishing attacks involve new or suspicious domains that haven’t yet been 
 ### How to Block Risky or Newly Registered Domains
 
 i) Risk Assessment: Use threat intelligence to identify and block access to domains that are considered risky.
+
 ii) New Domain Blocking: Automatically block access to newly registered domains until they are verified as safe.
 
 ### Conclusion
@@ -253,6 +264,7 @@ Restricting the types of files allowed through email helps prevent the spread of
 
 ### How to Block Unnecessary File Types
 i) Identify Risky File Types: Determine which file types are unnecessary and pose a security risk.
+
 ii) Configure Email Security Policies: Set up policies to block these file types from being sent or received via email.
 
 ### Example Configuration for Microsoft Exchange Online
@@ -276,6 +288,7 @@ For sensitive or critical attachments, enforcing the use of password protection 
 ### How to Use Password-Protected Attachments
 
 i) Create Password-Protected Files: Use tools like Microsoft Office or WinZip to create password-protected files.
+
 ii) Share Passwords Securely: Share the password through a secure channel, separate from the email containing the attachment.
 
 ### Conclusion
@@ -297,14 +310,18 @@ Implementing Zero Trust Access Control involves several key principles and steps
 ### Key Principles of Zero Trust
 
 i) Verify Explicitly: Always authenticate and authorize based on all available data points, including user identity, location, device health, and more.
+
 ii) Use Least Privilege Access: Limit user access to only what is necessary for their role, reducing the potential impact of compromised accounts.
+
 iii) Assume Breach: Design systems with the assumption that a breach has already occurred, and segment access to minimize damage.
 
 
 ### How to Implement Zero Trust Access Control
 
-i) Identity Verification: Continuously verify user identities using multi-factor authentication (MFA) and other identity management solutions.
+iii) Identity Verification: Continuously verify user identities using multi-factor authentication (MFA) and other identity management solutions.
+
 ii) Device Health Checks: Ensure that devices meet security standards before granting access.
+
 iii) Access Policies: Create and enforce policies that define who can access what resources under which conditions.
 
 ### Example Configuration for Microsoft Azure AD Conditional Access
@@ -343,9 +360,11 @@ Disconnect-AzureAD
 
 ### Benefits of Zero Trust Architecture
 
-- Enhanced Security: Continuous verification reduces the risk of unauthorized access.
-- Reduced Attack Surface: Limiting access to only necessary resources minimizes potential damage.
-- Improved Compliance: Helps meet regulatory requirements for data protection and security.
+i) Enhanced Security: Continuous verification reduces the risk of unauthorized access.
+
+ii) Reduced Attack Surface: Limiting access to only necessary resources minimizes potential damage.
+
+iii) Improved Compliance: Helps meet regulatory requirements for data protection and security.
 
 ### Conclusion
 Implementing a Zero Trust Architecture is essential for protecting your organization from sophisticated cyber threats.
@@ -364,6 +383,7 @@ Threat intelligence feeds provide valuable information about known threats, incl
 
 ### How to Use Threat Intelligence Feeds
 i) Select Threat Intelligence Sources: Choose reliable external and internal threat intelligence feeds. Examples include open-source data feeds, commercial intelligence feeds, and threat intelligence-sharing communities.
+
 ii) Integrate with Security Tools: Incorporate threat intelligence feeds into your security information and event management (SIEM) systems and other security tools.
 
 ### Proactive Threat Hunting
@@ -372,7 +392,9 @@ Proactive threat hunting involves actively searching for signs of malicious acti
 ### How to Use the MITRE ATT&CK Framework
 
 i) Identify Relevant Techniques: Focus on techniques related to phishing, such as T1204.002 (User Execution: Malicious File) and T1566.001 (Phishing: Spearphishing Attachment).
+
 ii) Develop Hunting Hypotheses: Create hypotheses about potential threats based on the identified techniques.
+
 iii) Collect and Analyze Data: Use security tools to collect and analyze data related to the hypotheses.
 
 ### Conclusion
@@ -421,7 +443,9 @@ v=DMARC1; p=reject; rua=mailto:dmarc-reports@yourdomain.com; ruf=mailto:dmarc-fa
 
 ### How to Implement DMARC, DKIM, and SPF
 i) Create DNS Records: Add the SPF, DKIM, and DMARC records to your domain’s DNS settings.
+
 ii) Monitor Reports: Use the reporting capabilities of DMARC to monitor authentication results and adjust policies as needed.
+
 iii) Enforce Policies: Gradually move from a monitoring policy (p=none) to a more restrictive policy (p=quarantine or p=reject) as you gain confidence in your email authentication setup.
 
 ### Example Configuration for Microsoft 365
@@ -463,6 +487,7 @@ Endpoint hardening involves implementing security measures to protect endpoints 
 Application whitelisting is a security approach that allows only pre-approved applications to run on a system. This prevents unauthorized applications, including those delivered via phishing attachments, from executing.
 ### How to Implement Application Whitelisting
 i) Identify Trusted Applications: Create a list of applications that are necessary and trusted for your organization.
+
 ii) Configure Whitelisting Policies: Use security tools to enforce these policies, ensuring only approved applications can run.
 ### Example Configuration for Windows Defender Application Control (WDAC)
 Here’s an example PowerShell script to configure application whitelisting using Windows Defender Application Control:
@@ -485,15 +510,17 @@ Deploy-CIPolicy -PolicyPath $BinPath
 Macros in documents can be used to execute malicious code. Disabling or limiting the use of macros in documents received via email can reduce the risk of phishing attacks.
 
 ### How to Disable Macros
-1. Group Policy: Use Group Policy to disable macros or limit their use to trusted locations.
-2. Office Settings: Configure Microsoft Office settings to disable macros by default.
+i) Group Policy: Use Group Policy to disable macros or limit their use to trusted locations.
+
+ii) Office Settings: Configure Microsoft Office settings to disable macros by default.
 
 ### Example Configuration for Group Policy
 Here’s an example of how to disable macros using Group Policy:
+i) Open the Group Policy Management Console (GPMC).
 
-1. Open the Group Policy Management Console (GPMC).
-2. Navigate to User Configuration > Administrative Templates > Microsoft Office > Office 2016 > Security Settings > Trust Center.
-3. Configure the following settings:
+ii) Navigate to User Configuration > Administrative Templates > Microsoft Office > Office 2016 > Security Settings > Trust Center.
+
+iii) Configure the following settings:
 - Disable all macros without notification: Enabled
 - Block macros from running in Office files from the internet: Enabled
   
@@ -526,9 +553,11 @@ Network segmentation is a security practice that divides a network into smaller,
 Network segmentation involves creating subnetworks (subnets) within your larger network, each with its own security policies and controls. This approach helps contain threats and improves overall network performance.
 
 ### How Network Segmentation Works
-1. Divide the Network: Split the network into smaller segments based on criteria such as department, function, or sensitivity of data.
-2. Apply Security Controls: Implement security measures at the boundaries of each segment to control traffic flow and prevent unauthorized access.
-3. Monitor and Manage: Continuously monitor network traffic and manage segmentation policies to ensure they remain effective.
+i) Divide the Network: Split the network into smaller segments based on criteria such as department, function, or sensitivity of data.
+
+ii) Apply Security Controls: Implement security measures at the boundaries of each segment to control traffic flow and prevent unauthorized access.
+
+iii) Monitor and Manage: Continuously monitor network traffic and manage segmentation policies to ensure they remain effective.
 ### Example Configuration for VLAN Segmentation
 Here’s an example of how to configure VLAN segmentation using Cisco switches:
 ```
@@ -577,7 +606,9 @@ Microsegmentation takes network segmentation a step further by applying granular
 
 ### How Microsegmentation Works
 i) Define Microsegments: Create microsegments for individual applications or workloads.
+
 ii) Apply Granular Policies: Implement detailed security policies for each microsegment, controlling traffic at a very granular level.
+
 iii) Continuous Monitoring: Monitor traffic within and between microsegments to detect and respond to threats.
 
 ### Conclusion
@@ -594,8 +625,11 @@ Machine learning (ML) and artificial intelligence (AI) are powerful tools for de
 ### Use Machine Learning or AI-Based Solutions
 ### How Machine Learning and AI Work
 i) Data Collection: Gather large datasets of emails, including both legitimate and phishing emails.
+
 ii) Feature Extraction: Analyze various features such as sender’s email address, email content, embedded links, and attachments.
+
 iii) Model Training: Use machine learning algorithms to train models on the extracted features.
+
 iv) Anomaly Detection: Deploy the trained models to detect anomalies and flag potential phishing emails.
 
 
@@ -604,7 +638,9 @@ Using the MITRE ATT&CK framework, organizations can proactively hunt for threats
 
 ### How to Use the MITRE ATT&CK Framework
 i) Identify Techniques: Focus on phishing-related techniques such as T1204.002 (User Execution: Malicious File) and T1566.001 (Phishing: Spearphishing Attachment).
+
 ii) Develop Hypotheses: Create hypotheses about potential phishing threats based on these techniques.
+
 iii) Collect and Analyze Data: Use security tools to collect and analyze data related to the identified techniques.
 
 
