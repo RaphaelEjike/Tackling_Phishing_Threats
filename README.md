@@ -133,10 +133,10 @@ Multi-Factor Authentication (MFA) is a critical security measure that adds an ex
 
 Implementing MFA across your organization ensures that all user accounts are protected by an additional layer of security. Here are the steps to enforce MFA:
 
-### i) Choose an MFA Solution
+#### i) Choose an MFA Solution
 Select a reliable MFA solution that integrates well with your existing infrastructure. Popular options include Microsoft Authenticator, Google Authenticator, and Duo Security.
 
-### ii) Configure MFA Policies
+#### ii) Configure MFA Policies
 
 Set up MFA policies to enforce multi-factor authentication for all employees. This typically involves:
 
@@ -167,7 +167,7 @@ Set-MsolUser -UserPrincipalName $user.UserPrincipalName -StrongAuthenticationReq
 Disconnect-AzureAD
 ```
 
-### iii) Educate Employees
+#### iii) Educate Employees
 Ensure that employees understand the importance of MFA and how to use it. Provide training sessions and resources to help them set up and use MFA effectively.
 
 #### Benefits of MFA
