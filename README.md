@@ -14,6 +14,7 @@ Most companies have strong perimeter defences and adopt advanced strategies like
 11. Segmentation of Network Access
 12. User Reporting Mechanisms
 13. Machine Learning and AI for Phishing Detection
+14. Email Gateway File Block List
 
 
 ## 1. Email Security Solutions (Secure Email Gateways - SEG)
@@ -646,6 +647,16 @@ iii) Collect and Analyze Data: Use security tools to collect and analyze data re
 
 ### Conclusion
 Using machine learning and AI for phishing detection provides a proactive approach to identifying and mitigating phishing threats. 
+
+
+
+
+
+				Email Gateway File Block List
+
+![image](https://github.com/user-attachments/assets/2a30ed33-8e3a-42d4-b882-5c39d7ec5892)
+
+
 
 
 
